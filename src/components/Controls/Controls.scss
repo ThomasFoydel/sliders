@@ -10,3 +10,10 @@
   top: 10rem;
   transform: rotateZ(90deg) scale(1.7);
 }
+
+.flex {
+  display: flex;
+  input {
+    margin-left: 0.4rem;
+  }
+}

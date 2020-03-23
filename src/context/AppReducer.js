@@ -25,7 +25,11 @@ export default (state, action) => {
         ...state,
         borderActive: action.payload
       };
-
+    case 'TOGGLE_SHINE':
+      return {
+        ...state,
+        shineActive: action.payload
+      };
     default:
       return state;
   }

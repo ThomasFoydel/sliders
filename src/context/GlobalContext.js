@@ -5,8 +5,9 @@ const initialState = {
   xVal: 0,
   yVal: 360,
   zVal: 0,
-  aVal: 180,
-  borderActive: false
+  aVal: 270,
+  borderActive: false,
+  shineActive: false
 };
 
 // Create context
@@ -48,7 +49,14 @@ export const GlobalProvider = ({ children }) => {
     });
   }
 
-  const { xVal, yVal, zVal, aVal, borderActive } = state;
+  function toggleShine(boolVal) {
+    dispatch({
+      type: 'TOGGLE_SHINE',
+      payload: boolVal
+    });
+  }
+
+  const { xVal, yVal, zVal, aVal, borderActive, shineActive } = state;
   return (
     <GlobalContext.Provider
       value={{
@@ -61,7 +69,9 @@ export const GlobalProvider = ({ children }) => {
         rotateZ,
         rotateA,
         borderActive,
-        toggleBorders
+        toggleBorders,
+        shineActive,
+        toggleShine
       }}
     >
       {children}

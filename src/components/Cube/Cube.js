@@ -3,8 +3,16 @@ import './Cube.scss';
 import { GlobalContext } from 'context/GlobalContext';
 
 const Cube = () => {
-  const { xVal, yVal, zVal, aVal, borderActive } = useContext(GlobalContext);
+  const { xVal, yVal, zVal, aVal, borderActive, shineActive } = useContext(
+    GlobalContext
+  );
 
+  const dynamicStyle = {
+    border: borderActive && '2px rgb(255, 255, 255) solid',
+    boxShadow: shineActive
+      ? '0.8rem 0.8rem 20rem rgba(255, 255, 255, 0.18)'
+      : 'none'
+  };
   return (
     <div className='scene'>
       <div
@@ -13,52 +21,22 @@ const Cube = () => {
           transform: `rotate3d(${xVal}, ${yVal}, ${zVal}, ${aVal}deg)`
         }}
       >
-        <div
-          style={{
-            border: borderActive ? '2px rgb(255, 255, 255) solid' : 'none'
-          }}
-          className='side front'
-        >
+        <div style={dynamicStyle} className='side front'>
           1
         </div>
-        <div
-          style={{
-            border: borderActive ? '2px rgb(255, 255, 255) solid' : 'none'
-          }}
-          className='side back'
-        >
+        <div style={dynamicStyle} className='side back'>
           6
         </div>
-        <div
-          style={{
-            border: borderActive ? '2px rgb(255, 255, 255) solid' : 'none'
-          }}
-          className='side right'
-        >
+        <div style={dynamicStyle} className='side right'>
           3
         </div>
-        <div
-          style={{
-            border: borderActive ? '2px rgb(255, 255, 255) solid' : 'none'
-          }}
-          className='side left'
-        >
+        <div style={dynamicStyle} className='side left'>
           4
         </div>
-        <div
-          style={{
-            border: borderActive ? '2px rgb(255, 255, 255) solid' : 'none'
-          }}
-          className='side top'
-        >
+        <div style={dynamicStyle} className='side top'>
           2
         </div>
-        <div
-          style={{
-            border: borderActive ? '2px rgb(255, 255, 255) solid' : 'none'
-          }}
-          className='side bottom'
-        >
+        <div style={dynamicStyle} className='side bottom'>
           5
         </div>
       </div>
