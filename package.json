@@ -1,40 +1,27 @@
 {
   "name": "sliders",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "node-sass": "^4.13.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
-    "react-spring": "^8.0.27"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index/index.js"
   },
   "engines": {
     "node": "10.15.3",
     "npm": "6.9.0"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasFoydel/sliders.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "Thomas Foydel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThomasFoydel/sliders/issues"
+  },
+  "homepage": "https://github.com/ThomasFoydel/sliders#readme",
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
