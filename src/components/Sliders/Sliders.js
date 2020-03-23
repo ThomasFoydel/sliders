@@ -11,19 +11,19 @@ const Sliders = () => {
       <input
         type='range'
         id='range01'
-        max='100'
+        max='360'
         onChange={e => rotateX(e.target.value)}
       ></input>
       <input
         type='range'
         id='range02'
-        max='100'
+        max='360'
         onChange={e => rotateY(e.target.value)}
       ></input>
       <input
         type='range'
         id='range03'
-        max='100'
+        max='360'
         onChange={e => rotateZ(e.target.value)}
       ></input>
       <input

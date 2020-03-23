@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import './Cube.scss';
 import { GlobalContext } from 'context/GlobalContext';
-import CubeSide1 from 'components/Cube/CubeSide1';
 
 const Cube = () => {
   const { xVal, yVal, zVal, aVal } = useContext(GlobalContext);
@@ -12,13 +11,12 @@ const Cube = () => {
         className='cube '
         style={{ transform: `rotate3d(${xVal}, ${yVal}, ${zVal}, ${aVal}deg)` }}
       >
-        {/* <CubeSide1 xVal={xVal} yVal={yVal} zVal={zVal} aVal={aVal} /> */}
-        <div className='side front '></div>
-        <div className='side back'></div>
-        <div className='side right'></div>
-        <div className='side left'></div>
-        <div className='side top'></div>
-        <div className='side bottom'></div>
+        <div className='side front'>1</div>
+        <div className='side back'>6</div>
+        <div className='side right'>3</div>
+        <div className='side left'>4</div>
+        <div className='side top'>2</div>
+        <div className='side bottom'>5</div>
       </div>
     </div>
   );
