@@ -20,6 +20,11 @@ export default (state, action) => {
         ...state,
         aVal: action.payload
       };
+    case 'TOGGLE_BORDERS':
+      return {
+        ...state,
+        borderActive: action.payload
+      };
 
     default:
       return state;

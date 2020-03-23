@@ -2,10 +2,11 @@ import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
 const initialState = {
-  xVal: 180,
-  yVal: 180,
-  zVal: 180,
-  aVal: 180
+  xVal: 0,
+  yVal: 360,
+  zVal: 0,
+  aVal: 180,
+  borderActive: false
 };
 
 // Create context
@@ -40,8 +41,14 @@ export const GlobalProvider = ({ children }) => {
       payload: rotateValue
     });
   }
+  function toggleBorders(boolVal) {
+    dispatch({
+      type: 'TOGGLE_BORDERS',
+      payload: boolVal
+    });
+  }
 
-  const { xVal, yVal, zVal, aVal } = state;
+  const { xVal, yVal, zVal, aVal, borderActive } = state;
   return (
     <GlobalContext.Provider
       value={{
@@ -52,7 +59,9 @@ export const GlobalProvider = ({ children }) => {
         rotateX,
         rotateY,
         rotateZ,
-        rotateA
+        rotateA,
+        borderActive,
+        toggleBorders
       }}
     >
       {children}

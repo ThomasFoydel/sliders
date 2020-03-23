@@ -1,6 +1,6 @@
 import React from 'react';
 import Cube from 'components/Cube/Cube';
-import Sliders from 'components/Sliders/Sliders';
+import Controls from 'components/Controls/Controls';
 import { GlobalProvider } from 'context/GlobalContext';
 
 import './App.scss';
@@ -12,7 +12,7 @@ function App() {
         <div className='center'>
           <Cube />
         </div>
-        <Sliders />
+        <Controls />
       </div>
     </GlobalProvider>
   );

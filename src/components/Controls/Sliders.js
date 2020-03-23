@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import './Sliders.scss';
+
 import { GlobalContext } from 'context/GlobalContext';
 
 const Sliders = () => {
