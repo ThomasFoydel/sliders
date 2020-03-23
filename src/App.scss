@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  box-sizing: border-box;
+  background: rgba(245, 245, 245, 0);
+}
+
+.app-container {
+  width: 100%;
+  padding-top: 16rem;
+}
+
+.center {
+  width: 17rem;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
