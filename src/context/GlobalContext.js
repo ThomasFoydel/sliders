@@ -21,6 +21,18 @@ export const GlobalProvider = ({ children }) => {
       payload: rotateValue
     });
   }
+  function rotateY(rotateValue) {
+    dispatch({
+      type: 'ROTATE_Y',
+      payload: rotateValue
+    });
+  }
+  function rotateZ(rotateValue) {
+    dispatch({
+      type: 'ROTATE_Z',
+      payload: rotateValue
+    });
+  }
 
   const { xVal, yVal, zVal } = state;
   return (
@@ -29,7 +41,9 @@ export const GlobalProvider = ({ children }) => {
         xVal,
         yVal,
         zVal,
-        rotateX
+        rotateX,
+        rotateY,
+        rotateZ
       }}
     >
       {children}
