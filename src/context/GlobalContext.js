@@ -4,7 +4,8 @@ import AppReducer from './AppReducer';
 const initialState = {
   xVal: 0,
   yVal: 0,
-  zVal: 0
+  zVal: 0,
+  aVal: 0
 };
 
 // Create context
@@ -33,17 +34,25 @@ export const GlobalProvider = ({ children }) => {
       payload: rotateValue
     });
   }
+  function rotateA(rotateValue) {
+    dispatch({
+      type: 'ROTATE_A',
+      payload: rotateValue
+    });
+  }
 
-  const { xVal, yVal, zVal } = state;
+  const { xVal, yVal, zVal, aVal } = state;
   return (
     <GlobalContext.Provider
       value={{
         xVal,
         yVal,
         zVal,
+        aVal,
         rotateX,
         rotateY,
-        rotateZ
+        rotateZ,
+        rotateA
       }}
     >
       {children}

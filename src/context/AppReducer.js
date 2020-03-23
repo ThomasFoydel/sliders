@@ -15,6 +15,12 @@ export default (state, action) => {
         ...state,
         zVal: action.payload
       };
+    case 'ROTATE_A':
+      return {
+        ...state,
+        aVal: action.payload
+      };
+
     default:
       return state;
   }
