@@ -2,10 +2,10 @@ import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
 const initialState = {
-  xVal: 0,
-  yVal: 0,
-  zVal: 0,
-  aVal: 0
+  xVal: 180,
+  yVal: 180,
+  zVal: 180,
+  aVal: 180
 };
 
 // Create context
