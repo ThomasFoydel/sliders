@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import './Cube.scss';
 import { GlobalContext } from 'context/GlobalContext';
+import { useSpring, animated, config } from 'react-spring';
 
 const Cube = () => {
   const { xVal, yVal, zVal, aVal, borderActive, shineActive } = useContext(
@@ -13,14 +14,14 @@ const Cube = () => {
       ? '0.8rem 0.8rem 20rem rgba(255, 255, 255, 0.18)'
       : 'none'
   };
+
+  const animationProps = useSpring({
+    transform: `rotate3d(${xVal}, ${yVal}, ${zVal}, ${aVal}deg)`,
+    config: config.molasses
+  });
   return (
     <div className='scene'>
-      <div
-        className='cube '
-        style={{
-          transform: `rotate3d(${xVal}, ${yVal}, ${zVal}, ${aVal}deg)`
-        }}
-      >
+      <animated.div className='cube' style={animationProps}>
         <div style={dynamicStyle} className='side front'>
           1
         </div>
@@ -39,7 +40,7 @@ const Cube = () => {
         <div style={dynamicStyle} className='side bottom'>
           5
         </div>
-      </div>
+      </animated.div>
     </div>
   );
 };
