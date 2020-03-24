@@ -10,7 +10,8 @@ const initialState = {
   shineActive: false,
   springConfig: 'wobbly',
   cubeGradient:
-    'radial-gradient(rgba(240, 80, 255, 1) 0%, rgba(255, 162, 80, 0.8) 100%)'
+    'radial-gradient(rgba(240, 80, 255, 1) 0%, rgba(255, 162, 80, 0.8) 100%)',
+  roundActive: false
 };
 
 // Create context
@@ -69,6 +70,12 @@ export const GlobalProvider = ({ children }) => {
       payload: gradientString
     });
   }
+  function toggleRound(boolVal) {
+    dispatch({
+      type: 'TOGGLE_ROUND',
+      payload: boolVal
+    });
+  }
 
   const {
     xVal,
@@ -78,7 +85,8 @@ export const GlobalProvider = ({ children }) => {
     borderActive,
     shineActive,
     springConfig,
-    cubeGradient
+    cubeGradient,
+    roundActive
   } = state;
   return (
     <GlobalContext.Provider
@@ -98,7 +106,9 @@ export const GlobalProvider = ({ children }) => {
         springConfig,
         changeSpringConfig,
         cubeGradient,
-        changeCubeGradient
+        changeCubeGradient,
+        roundActive,
+        toggleRound
       }}
     >
       {children}

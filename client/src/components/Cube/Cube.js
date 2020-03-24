@@ -16,10 +16,6 @@ const Cube = () => {
     roundActive
   } = useContext(GlobalContext);
 
-  const dynamicStyle = {
-    // border: borderActive && '2px rgb(255, 255, 255) solid'
-  };
-
   const animationProps = useSpring({
     transform: `rotate3d(${xVal}, ${yVal}, ${zVal}, ${aVal}deg)`,
     config: config[springConfig]
@@ -34,13 +30,13 @@ const Cube = () => {
     border: borderActive
       ? '4px rgb(255, 255, 255) solid'
       : '2px rgba(255, 255, 255, 0) solid',
-    borderRadius: roundActive ? '100px' : '0px'
+    borderRadius: roundActive ? '50%' : '0%'
   });
 
   return (
     <div className='scene'>
       <animated.div className='cube' style={animationProps}>
-        <div style={dynamicStyle} className='side front'>
+        <div className='side front'>
           <animated.div
             className='cube-panel-spring'
             style={sidePanelAnimationProps}
@@ -49,7 +45,7 @@ const Cube = () => {
           </animated.div>
         </div>
 
-        <div style={dynamicStyle} className='side back'>
+        <div className='side back'>
           <animated.div
             className='cube-panel-spring'
             style={sidePanelAnimationProps}
@@ -57,7 +53,7 @@ const Cube = () => {
             6
           </animated.div>
         </div>
-        <div style={dynamicStyle} className='side right'>
+        <div className='side right'>
           <animated.div
             className='cube-panel-spring'
             style={sidePanelAnimationProps}
@@ -65,7 +61,7 @@ const Cube = () => {
             3
           </animated.div>
         </div>
-        <div style={dynamicStyle} className='side left'>
+        <div className='side left'>
           <animated.div
             className='cube-panel-spring'
             style={sidePanelAnimationProps}
@@ -73,7 +69,7 @@ const Cube = () => {
             4
           </animated.div>
         </div>
-        <div style={dynamicStyle} className='side top'>
+        <div className='side top'>
           <animated.div
             className='cube-panel-spring'
             style={sidePanelAnimationProps}
@@ -81,7 +77,7 @@ const Cube = () => {
             2
           </animated.div>
         </div>
-        <div style={dynamicStyle} className='side bottom'>
+        <div className='side bottom'>
           <animated.div
             className='cube-panel-spring'
             style={sidePanelAnimationProps}

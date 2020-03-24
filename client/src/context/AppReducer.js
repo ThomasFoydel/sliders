@@ -40,6 +40,11 @@ export default (state, action) => {
         ...state,
         cubeGradient: action.payload
       };
+    case 'TOGGLE_ROUND':
+      return {
+        ...state,
+        roundActive: action.payload
+      };
 
     default:
       return state;

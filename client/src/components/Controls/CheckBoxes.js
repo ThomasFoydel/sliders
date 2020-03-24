@@ -3,10 +3,15 @@ import React, { useContext } from 'react';
 import { GlobalContext } from 'context/GlobalContext';
 
 const CheckBoxes = () => {
-  const { borderActive, toggleBorders, shineActive, toggleShine } = useContext(
-    GlobalContext
-  );
-  //   console.log('bordersActive: ', borderActive);
+  const {
+    borderActive,
+    toggleBorders,
+    shineActive,
+    toggleShine,
+    roundActive,
+    toggleRound
+  } = useContext(GlobalContext);
+
   return (
     <div className='checkboxes'>
       <div>
@@ -29,6 +34,16 @@ const CheckBoxes = () => {
           type='checkbox'
         ></input>{' '}
         shine
+      </div>
+      <div>
+        <input
+          checked={roundActive}
+          onChange={e => {
+            toggleRound(e.target.checked);
+          }}
+          type='checkbox'
+        ></input>{' '}
+        round
       </div>
     </div>
   );
