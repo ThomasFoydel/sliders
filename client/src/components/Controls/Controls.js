@@ -10,11 +10,15 @@ import './Controls.scss';
 const Controls = () => {
   return (
     <div className='controls-container'>
-      <Sliders />
-      <CheckBoxes />
-      <SpringConfigController />
-      <ColorController />
-      <OpacityController />
+      <div>
+        <Sliders />
+        <OpacityController />
+      </div>
+      <div>
+        <CheckBoxes />
+        <SpringConfigController />
+        <ColorController />
+      </div>
     </div>
   );
 };

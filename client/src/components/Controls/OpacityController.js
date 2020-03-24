@@ -4,8 +4,8 @@ import { GlobalContext } from 'context/GlobalContext';
 const OpacityController = () => {
   const { opacitySetting, changeOpacity } = useContext(GlobalContext);
   return (
-    <div>
-      opacity
+    <div className='opacity-controller-container'>
+      <div>O</div>
       <input
         type='range'
         value={opacitySetting}
