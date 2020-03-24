@@ -13,7 +13,6 @@ const Sliders = () => {
     zVal,
     aVal
   } = useContext(GlobalContext);
-  console.log(useContext(GlobalContext));
 
   return (
     <div className='sliders-container'>

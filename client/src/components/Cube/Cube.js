@@ -4,9 +4,15 @@ import { GlobalContext } from 'context/GlobalContext';
 import { useSpring, animated, config } from 'react-spring';
 
 const Cube = () => {
-  const { xVal, yVal, zVal, aVal, borderActive, shineActive } = useContext(
-    GlobalContext
-  );
+  const {
+    xVal,
+    yVal,
+    zVal,
+    aVal,
+    borderActive,
+    shineActive,
+    springConfig
+  } = useContext(GlobalContext);
 
   const dynamicStyle = {
     border: borderActive && '2px rgb(255, 255, 255) solid',
@@ -17,8 +23,9 @@ const Cube = () => {
 
   const animationProps = useSpring({
     transform: `rotate3d(${xVal}, ${yVal}, ${zVal}, ${aVal}deg)`,
-    config: config.molasses
+    config: config[springConfig]
   });
+
   return (
     <div className='scene'>
       <animated.div className='cube' style={animationProps}>

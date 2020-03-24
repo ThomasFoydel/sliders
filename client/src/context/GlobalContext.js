@@ -7,7 +7,8 @@ const initialState = {
   zVal: 0,
   aVal: 270,
   borderActive: false,
-  shineActive: false
+  shineActive: false,
+  springConfig: 'wobbly'
 };
 
 // Create context
@@ -55,8 +56,22 @@ export const GlobalProvider = ({ children }) => {
       payload: boolVal
     });
   }
+  function changeSpringConfig(configVal) {
+    dispatch({
+      type: 'CHANGE_SPRING_CONFIG',
+      payload: configVal
+    });
+  }
 
-  const { xVal, yVal, zVal, aVal, borderActive, shineActive } = state;
+  const {
+    xVal,
+    yVal,
+    zVal,
+    aVal,
+    borderActive,
+    shineActive,
+    springConfig
+  } = state;
   return (
     <GlobalContext.Provider
       value={{
@@ -71,7 +86,9 @@ export const GlobalProvider = ({ children }) => {
         borderActive,
         toggleBorders,
         shineActive,
-        toggleShine
+        toggleShine,
+        springConfig,
+        changeSpringConfig
       }}
     >
       {children}

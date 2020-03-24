@@ -30,6 +30,11 @@ export default (state, action) => {
         ...state,
         shineActive: action.payload
       };
+    case 'CHANGE_SPRING_CONFIG':
+      return {
+        ...state,
+        springConfig: action.payload
+      };
     default:
       return state;
   }
