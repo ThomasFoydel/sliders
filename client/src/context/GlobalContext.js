@@ -8,7 +8,9 @@ const initialState = {
   aVal: 270,
   borderActive: false,
   shineActive: false,
-  springConfig: 'wobbly'
+  springConfig: 'wobbly',
+  cubeGradient:
+    'radial-gradient(rgba(240, 80, 255, 1), rgba(255, 162, 80, 0.8))'
 };
 
 // Create context
@@ -49,7 +51,6 @@ export const GlobalProvider = ({ children }) => {
       payload: boolVal
     });
   }
-
   function toggleShine(boolVal) {
     dispatch({
       type: 'TOGGLE_SHINE',
@@ -62,6 +63,12 @@ export const GlobalProvider = ({ children }) => {
       payload: configVal
     });
   }
+  function changeCubeGradient(gradientString) {
+    dispatch({
+      type: 'CHANGE_CUBE_GRADIENT',
+      payload: gradientString
+    });
+  }
 
   const {
     xVal,
@@ -70,7 +77,8 @@ export const GlobalProvider = ({ children }) => {
     aVal,
     borderActive,
     shineActive,
-    springConfig
+    springConfig,
+    cubeGradient
   } = state;
   return (
     <GlobalContext.Provider
@@ -88,7 +96,9 @@ export const GlobalProvider = ({ children }) => {
         shineActive,
         toggleShine,
         springConfig,
-        changeSpringConfig
+        changeSpringConfig,
+        cubeGradient,
+        changeCubeGradient
       }}
     >
       {children}

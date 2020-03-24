@@ -11,14 +11,16 @@ const Cube = () => {
     aVal,
     borderActive,
     shineActive,
-    springConfig
+    springConfig,
+    cubeGradient
   } = useContext(GlobalContext);
 
   const dynamicStyle = {
     border: borderActive && '2px rgb(255, 255, 255) solid',
     boxShadow: shineActive
       ? '0.8rem 0.8rem 20rem rgba(255, 255, 255, 0.18)'
-      : 'none'
+      : 'none',
+    background: cubeGradient
   };
 
   const animationProps = useSpring({

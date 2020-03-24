@@ -6,8 +6,6 @@ const SpringConfigController = () => {
   return (
     <div>
       <select
-        id='cars'
-        name='cars'
         value={springConfig}
         onChange={e => changeSpringConfig(e.target.value)}
       >

@@ -35,6 +35,12 @@ export default (state, action) => {
         ...state,
         springConfig: action.payload
       };
+    case 'CHANGE_CUBE_GRADIENT':
+      return {
+        ...state,
+        cubeGradient: action.payload
+      };
+
     default:
       return state;
   }
