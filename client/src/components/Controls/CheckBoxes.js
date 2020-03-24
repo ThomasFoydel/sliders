@@ -8,7 +8,7 @@ const CheckBoxes = () => {
   );
   //   console.log('bordersActive: ', borderActive);
   return (
-    <>
+    <div className='checkboxes'>
       <div>
         <input
           checked={borderActive}
@@ -30,7 +30,7 @@ const CheckBoxes = () => {
         ></input>{' '}
         shine
       </div>
-    </>
+    </div>
   );
 };
 

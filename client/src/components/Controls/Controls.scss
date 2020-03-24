@@ -1,12 +1,13 @@
 .controls-container {
   color: white;
+  position: fixed;
+  top: 10rem;
+  right: 1rem;
 }
 
 .sliders-container {
-  right: 1rem;
   display: flex;
   flex-direction: column;
-  top: 10rem;
   transform: rotateZ(90deg) scale(1.7);
 }
 
@@ -15,4 +16,8 @@
   input {
     margin-left: 0.4rem;
   }
+}
+
+.checkboxes {
+  margin-top: 8rem;
 }
