@@ -10,7 +10,7 @@ const initialState = {
   shineActive: false,
   springConfig: 'wobbly',
   cubeGradient:
-    'radial-gradient(rgba(240, 80, 255, 1), rgba(255, 162, 80, 0.8))'
+    'radial-gradient(rgba(240, 80, 255, 1) 0%, rgba(255, 162, 80, 0.8) 100%)'
 };
 
 // Create context
