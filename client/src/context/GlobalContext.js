@@ -1,5 +1,8 @@
 import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
+import colors from 'components/Controls/colors';
+
+const { middle, outer } = colors.strawberryBanana;
 
 const initialState = {
   xVal: 0,
@@ -9,9 +12,9 @@ const initialState = {
   borderActive: false,
   shineActive: false,
   springConfig: 'wobbly',
-  cubeGradient:
-    'radial-gradient(rgba(240, 80, 255, 1) 0%, rgba(255, 162, 80, 0.8) 100%)',
-  roundActive: false
+  cubeGradient: 'strawberryBanana',
+  roundActive: false,
+  opacitySetting: 100
 };
 
 // Create context
@@ -76,6 +79,12 @@ export const GlobalProvider = ({ children }) => {
       payload: boolVal
     });
   }
+  function changeOpacity(opacityVal) {
+    dispatch({
+      type: 'CHANGE_OPACITY',
+      payload: opacityVal
+    });
+  }
 
   const {
     xVal,
@@ -86,7 +95,8 @@ export const GlobalProvider = ({ children }) => {
     shineActive,
     springConfig,
     cubeGradient,
-    roundActive
+    roundActive,
+    opacitySetting
   } = state;
   return (
     <GlobalContext.Provider
@@ -108,7 +118,9 @@ export const GlobalProvider = ({ children }) => {
         cubeGradient,
         changeCubeGradient,
         roundActive,
-        toggleRound
+        toggleRound,
+        opacitySetting,
+        changeOpacity
       }}
     >
       {children}

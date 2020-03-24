@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './Cube.scss';
 import { GlobalContext } from 'context/GlobalContext';
 import { useSpring, animated, config } from 'react-spring';
-
+import colors from 'components/Controls/colors';
 const Cube = () => {
   const {
     xVal,
@@ -13,7 +13,8 @@ const Cube = () => {
     shineActive,
     springConfig,
     cubeGradient,
-    roundActive
+    roundActive,
+    opacitySetting
   } = useContext(GlobalContext);
 
   const animationProps = useSpring({
@@ -21,8 +22,15 @@ const Cube = () => {
     config: config[springConfig]
   });
 
+  const currentGradient = colors[cubeGradient];
+  const { middle, outer } = currentGradient;
+
   const sidePanelAnimationProps = useSpring({
-    background: cubeGradient,
+    background: `radial-gradient(rgba(${middle.r},${middle.g},${
+      middle.b
+    }, ${opacitySetting / 100}), rgba(${outer.r},${outer.g},${
+      outer.b
+    },${opacitySetting / 100}))`,
     config: config[springConfig],
     boxShadow: shineActive
       ? '0.8rem 0.8rem 20rem rgba(255, 255, 255, 0.18)'

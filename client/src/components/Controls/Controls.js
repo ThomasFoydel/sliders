@@ -3,6 +3,7 @@ import Sliders from 'components/Controls/Sliders';
 import CheckBoxes from 'components/Controls/CheckBoxes';
 import SpringConfigController from 'components/Controls/SpringConfigController';
 import ColorController from 'components/Controls/ColorController';
+import OpacityController from 'components/Controls/OpacityController';
 
 import './Controls.scss';
 
@@ -13,6 +14,7 @@ const Controls = () => {
       <CheckBoxes />
       <SpringConfigController />
       <ColorController />
+      <OpacityController />
     </div>
   );
 };

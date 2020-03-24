@@ -45,6 +45,11 @@ export default (state, action) => {
         ...state,
         roundActive: action.payload
       };
+    case 'CHANGE_OPACITY':
+      return {
+        ...state,
+        opacitySetting: action.payload
+      };
 
     default:
       return state;
