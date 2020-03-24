@@ -36,9 +36,9 @@ const Cube = () => {
       ? '0.8rem 0.8rem 20rem rgba(255, 255, 255, 0.18)'
       : '0rem 0rem 20rem rgba(255, 255, 255, 0)',
     border: borderActive
-      ? '4px rgb(255, 255, 255) solid'
-      : '2px rgba(255, 255, 255, 0) solid',
-    borderRadius: roundActive ? '50%' : '0%'
+      ? '3px rgb(255, 255, 255) solid'
+      : '3px rgba(255, 255, 255, 0) solid',
+    borderRadius: roundActive ? '90px' : '0px'
   });
 
   return (
